@@ -1,0 +1,164 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.smtnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 20px;
+    background-color: white; 
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed; 
+    top: 0;
+    width: 90%; 
+    z-index: 1000; 
+}
+
+.smtmanu {
+    display: flex;
+    gap: 10px;
+}
+
+.smtmanu button {
+    background: none;
+    border: none;
+    color: black; 
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+    padding: 10px 20px;
+}
+
+.htmlbtn i {
+    color: #FF0303;
+}
+.htmlbtn {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 5px;
+}
+
+.cssbtn i {
+    color: #044EF5;
+}
+
+.jsbtn i {
+    color: #EBFB08;
+}
+
+.smtmanu button:hover {
+    color: #DD0A0A;
+}
+
+.smtmanu button.selected {
+    background-color: rgba(0, 0, 0, 0.1); 
+    border-radius: 5px;
+    color: black;
+}
+
+.preview {
+    color: black; 
+}
+
+.preview:hover {
+    color: #9807FF; 
+}
+
+textarea {
+    width: 100%;
+    height: calc(100vh - 60px); 
+    padding: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 16px;
+    margin-top: 40px; 
+    box-sizing: border-box;
+}
+
+#smthtml,
+#smtcss,
+#smtjs,
+#preview {
+    display: none; 
+}
+#smthtml {
+    display: block;
+}
+
+.code-preview {
+    width: 100%;
+    height: calc(100vh - 60px);
+    border: none;
+    margin-top: 40px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+    .smtbtn {
+      font-family: inherit;
+      font-size: 20px;
+      background: royalblue;
+      color: white;
+      padding: 0.7em 1em;
+      padding-left: 0.9em;
+      display: flex;
+      align-items: center;
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.2s;
+      cursor: pointer;
+      position: fixed;
+      bottom: 1em;
+      right: 1em;
+    }
+
+    .smtbtn {
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(45deg, royalblue, deepskyblue);
+      padding: 0.8em 1.2em;
+    }
+
+    .smtbtn span {
+      display: block;
+      margin-left: 0.3em;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .smtbtn i {
+      font-size: 24px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .smtbtn:hover .svg-wrapper {
+      animation: fly-1 0.6s ease-in-out infinite alternate;
+    }
+
+    .smtbtn:hover i {
+      transform: translateX(1.2em) rotate(45deg) scale(1.1);
+    }
+
+    .smtbtn:hover span {
+      transform: translateX(5em);
+    }
+
+    .smtbtn:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes fly-1 {
+      from {
+        transform: translateY(0.1em);
+      }
+
+      to {
+        transform: translateY(-0.1em);
+      }
+    }
