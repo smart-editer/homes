@@ -1,164 +1,138 @@
-/* styles.css */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.smtnav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2px 20px;
-    background-color: white; 
-    color: black;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: fixed; 
-    top: 0;
-    width: 90%; 
-    z-index: 1000; 
-}
-
-.smtmanu {
-    display: flex;
-    gap: 10px;
-}
-
-.smtmanu button {
-    background: none;
-    border: none;
-    color: black; 
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.3s ease;
-    padding: 10px 20px;
-}
-
-.htmlbtn i {
-    color: #FF0303;
-}
-.htmlbtn {
-    background-color: rgba(0, 0, 0, 0.5); 
-    border-radius: 5px;
-}
-
-.cssbtn i {
-    color: #044EF5;
-}
-
-.jsbtn i {
-    color: #EBFB08;
-}
-
-.smtmanu button:hover {
-    color: #DD0A0A;
-}
-
-.smtmanu button.selected {
-    background-color: rgba(0, 0, 0, 0.1); 
-    border-radius: 5px;
-    color: black;
-}
-
-.preview {
-    color: black; 
-}
-
-.preview:hover {
-    color: #9807FF; 
-}
-
-textarea {
+/* Style for the input field */
+#url {
     width: 100%;
-    height: calc(100vh - 60px); 
-    padding: 10px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: white;
-    font-size: 16px;
-    margin-top: 40px; 
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    outline: none;
 }
 
-#smthtml,
-#smtcss,
-#smtjs,
-#preview {
-    display: none; 
-}
-#smthtml {
-    display: block;
+#url:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
 
-.code-preview {
-    width: 100%;
-    height: calc(100vh - 60px);
+/* Style for the button */
+#submit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    margin-top: 40px;
-    background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-    .smtbtn {
-      font-family: inherit;
-      font-size: 20px;
-      background: royalblue;
-      color: white;
-      padding: 0.7em 1em;
-      padding-left: 0.9em;
-      display: flex;
-      align-items: center;
-      border: none;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.2s;
-      cursor: pointer;
-      position: fixed;
-      bottom: 1em;
-      right: 1em;
-    }
 
-    .smtbtn {
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      background: linear-gradient(45deg, royalblue, deepskyblue);
-      padding: 0.8em 1.2em;
-    }
+#submit:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0, 91, 187, 0.3);
+}
 
-    .smtbtn span {
-      display: block;
-      margin-left: 0.3em;
-      transition: all 0.3s ease-in-out;
-    }
+.loader-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+  }
 
-    .smtbtn i {
-      font-size: 24px;
-      transition: transform 0.3s ease-in-out;
-    }
+#loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
 
-    .smtbtn:hover .svg-wrapper {
-      animation: fly-1 0.6s ease-in-out infinite alternate;
-    }
+/* Keyframes for loader spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-    .smtbtn:hover i {
-      transform: translateX(1.2em) rotate(45deg) scale(1.1);
-    }
+/* Keyframes for loader spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-    .smtbtn:hover span {
-      transform: translateX(5em);
-    }
+/* Style for the alert box */
+#alert {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
 
-    .smtbtn:active {
-      transform: scale(0.95);
-    }
+/* Style for the download section */
+#downloadhere {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+}
 
-    @keyframes fly-1 {
-      from {
-        transform: translateY(0.1em);
-      }
-
-      to {
-        transform: translateY(-0.1em);
-      }
-    }
+/* Style for the result section */
+#js-result {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #495057;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.row video{
+  width: auto;
+  height: 80vh;
+}
+.row a{
+  padding: 10px 20px;
+  margin: 10px auto;
+  background-color: #E33767;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  width: 5rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); 
+  &:hover {
+  background-color: #D63058;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+&:active {
+  background-color: #B34363BF;
+  color: #000;
+  box-shadow: inset 1px 1px 10px #000;
+}
+}
