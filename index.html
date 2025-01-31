@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>forth Instagram Downloader Online</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies API Test</title>
 </head>
 <body>
-<div class="inst-container">
-  <h1>Instagram download <span class="typed-heading"></span></h1>
-  <form id="downloader" name="downloader" method="POST" onchange="hiddenAlert()" action="https://api.downloadgram.org/media">
-    
-    <input type="url" id="url" name="url" placeholder="https://www.instagram.com/p/CE4s12lJd1y/" autocomplete="ON" class="form-control" required>
+    <h1>Movies List</h1>
+    <div id="movies"></div>
 
-    <button id="submit" name="submit" class="btn btn-primary" style  ="margin:5px 0 10px 0;">Download Now</button>
+    <script>
+        function loadMovies() {
+            fetch('http://telegram-bot-sorabh.free.nf/api.php')  // Update API URL if needed
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 200) {
+                        document.getElementById("movies").innerHTML = 
+                            data.records.map(movie => `<p>${movie.title} (${movie.year})</p>`).join('');
+                    } else {
+                        document.getElementById("movies").innerHTML = "<p>No movies found</p>";
+                    }
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        }
 
-  </form>
-<div class="loader-content"><div id="loader" style="display:none"></div></div>
-
-<div id="alert" style="display: none;"></div>
-  <div id="downloadhere"></div>
-  <div id="js-result"></div>
-  <p style="color: red;">Note: Downloads from private accounts are not supported.</p>
-</div>
-<script src="script.js"></script>
+        loadMovies();
+    </script>
 </body>
 </html>
